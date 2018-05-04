@@ -1,7 +1,34 @@
-function PlayersService(callback){
+function FantasyService(callback){
     var playersData = []
-    //...
-   //...
+    var usersTeam= []
+
+    this.getLocalPlayers = function getLocalPlayers(){
+
+    }
+
+    this.getUsersTeam = function getUsersTeam(){
+
+    }
+
+    this.addUsersTeam = function addUsersTeam(newPlayerId, cb){
+      var newPlayer = playersData.filter(function(play){
+        return play.id == newPlayerId
+      })
+      usersTeam.push(newPlayer)
+      cb(usersTeam);
+    }
+
+    this.removeFromTeam = function removeFromTeam(removeId, draw){
+      var removePlayer =usersTeam.find(function(play){
+        return play.id == removeId
+      })
+    }
+
+    var index = usersTeam.indexOf(removePlayer)
+    usersTeam.splice(index,1)
+
+
+   
      function loadPlayersData(){
        //check if the player already has a copy of the NFL playersData
        var localData = localStorage.getItem('playersData');

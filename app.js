@@ -1,0 +1,3 @@
+controller: {
+    fantasyController: new FantasyController()
+}
