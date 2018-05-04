@@ -3,11 +3,11 @@ function FantasyService(callback){
     var usersTeam= []
 
     this.getLocalPlayers = function getLocalPlayers(){
-
+      return playersData;
     }
 
     this.getUsersTeam = function getUsersTeam(){
-
+      return usersTeam;
     }
 
     this.addUsersTeam = function addUsersTeam(newPlayerId, cb){
@@ -22,13 +22,14 @@ function FantasyService(callback){
       var removePlayer =usersTeam.find(function(play){
         return play.id == removeId
       })
-    }
+    
 
     var index = usersTeam.indexOf(removePlayer)
     usersTeam.splice(index,1)
 
+    draw(usersTeam)
+    };
 
-   
      function loadPlayersData(){
        //check if the player already has a copy of the NFL playersData
        var localData = localStorage.getItem('playersData');
