@@ -66,11 +66,11 @@ function FantasyController() {
         <h3>Name:${player.fullname}</h3>
         <h3>Team:${player.pro_team}</h3>
         <h3>Position:${player.position}</h3>
-        <button onclick="app.controller.fantasyController.removeFromTeam(${player.id})">Remove from Team   </button> 
+        <button onclick="app.controllers.fantasyController.removeFromTeam(${player.id})">Remove from Team   </button> 
         </div>`
 
         }
-
+        // app.controllers.fantasyController.removeFromTeam
         document.getElementById("usersTeam").innerHTML = template;
 
     }
@@ -82,7 +82,7 @@ function FantasyController() {
     }
 
     this.removeFromTeam = function removeFromTeam(id) {
-        fantasyService.removeFromTeam(id, drawPlayersTeam)
+        fantasyService.removeFromTeam(id, drawUsersTeam)
    
     }
 
