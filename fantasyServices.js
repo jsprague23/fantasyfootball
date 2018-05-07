@@ -10,11 +10,21 @@ function FantasyService(callback){
       return usersTeam;
     }
 
+    // this.getPlayersByTeam=function (teamName){
+    //   return playersData.filter(funtion(player){
+    //     if(player.team == teamName){
+    //       return true;
+    //     }
+    //   })
+    // }
+
+
     this.addUsersTeam = function addUsersTeam(newPlayerId, cb){
-      var newPlayer = playersData.filter(function(play){
+      console.log(newPlayer)
+      var newPlayer = playersData.find(function(play){
         return play.id == newPlayerId
       })
-      usersTeam.push(newPlayer)
+           usersTeam.push(newPlayer)
       cb(usersTeam);
     }
 
@@ -38,7 +48,7 @@ function FantasyService(callback){
            playersData = JSON.parse(localData);
            //return will short-circuit the loadPlayersData function
            //this will prevent the code below from ever executing
-           return callback()
+           return callback(playersData)
        }
        //if not go get that data
        var url = "https://bcw-getter.herokuapp.com/?url=";
@@ -51,7 +61,7 @@ function FantasyService(callback){
            console.log('Writing Player Data to localStorage')
            localStorage.setItem('playersData', JSON.stringify(playersData))
            console.log('Finished Writing Player Data to localStorage')
-           callback()
+           callback(playersData)
          });
      }    
  loadPlayersData(); //call the function above every time we create a new service
