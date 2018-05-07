@@ -8,23 +8,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/main.css">
 </head>
-<body>
+<body class="background">
+    <header><h1 class="d-flex justify-content-center font-italic header">Foosball is the devil!</h1></header>
     <section class="cotainer fluid">
-        <div class="row">
-            <img src="facesmash.jpg" alt="">
+        <!-- <div class="row">
+            <img src="facesmash.jpg" class="rounded mx-auto d-block"alt="">
+        </div> -->
+
+
+        
+        <div class="row d-flex justify-content-center">
+                <input type="search" id="fullname" placeholder="Search by position">
+                <button onclick="">Submit</button>
+                <input type="search" id="position" placeholder="Search by name">
+                <button onclick="">Submit</button>
+                <input type="search" id="pro_team" placeholder="Search by team">
+                <button onclick="">Submit</button>
         </div>
         <div class="row">
-            <div class="col playersData" id="usersTeam">
-                <h1>My Team</h1>
-                <!-- <h1>User's Team <span id="user"></span></h1>
-            </div>
-            <div class="col">
-                <h1>Search Results<span id="search"></span></h1>
-            </div> -->
+            <div class="col-4">
+                
+                <div class="card" id="usersTeam"style="width: 18rem;">
+                        </div>
+                      </div>
         </div>
 
-        <div class="col playersData" id="playersData">
-            <h1>Free Agents</h1>
+        <div class="col-4">
+            
+            <div class="card" id="playersData"style="width: 20rem;">
+                </div>
 
         </div>
     </section>

@@ -10,17 +10,33 @@ function FantasyService(callback){
       return usersTeam;
     }
 
-    // this.getPlayersByTeam=function (teamName){
-    //   return playersData.filter(funtion(player){
-    //     if(player.team == teamName){
-    //       return true;
-    //     }
-    //   })
-    // }
+    this.getPlayersByTeam=function (teamName){
+      return playersData.filter(function(player){
+        if(player.team == teamName){
+          return true;
+        }
+      })
+    }
+
+    this.getPlayersByPosition=function (position){
+      return playersData.filter(function(player){
+        if(player.position == position){
+          return true;
+        }
+      })
+    }
+
+    this.getPlayersByName=function (name){
+      return playersData.filter(function(player){
+        if(player.fullName == name){
+          return true;
+        }
+      })
+    }
 
 
     this.addUsersTeam = function addUsersTeam(newPlayerId, cb){
-      console.log(newPlayer)
+      
       var newPlayer = playersData.find(function(play){
         return play.id == newPlayerId
       })
