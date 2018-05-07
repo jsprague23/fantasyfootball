@@ -16,28 +16,34 @@
         </div> -->
 
 
-        
+
         <div class="row d-flex justify-content-center">
-                <input type="search" id="fullname" placeholder="Search by position">
+
+                <form class = "form" onsubmit="app.controllers.fantasyController.search(event)">
+                        <input type="text" class="form-control" name="query" placeholder=" Search">
+                        <button type="submit" class="btn btn-secondary bt-lg btn-block" id="get-player-button">Search</button>
+                          </form>
+                <!-- <input type="search" id="fullname" placeholder="Search by position">
                 <button onclick="">Submit</button>
                 <input type="search" id="position" placeholder="Search by name">
                 <button onclick="">Submit</button>
                 <input type="search" id="pro_team" placeholder="Search by team">
-                <button onclick="">Submit</button>
+                <button onclick="">Submit</button> -->
         </div>
-        <div class="row">
+        <div class="row d-flex justify-content-around">
             <div class="col-4">
                 
                 <div class="card" id="usersTeam"style="width: 18rem;">
                         </div>
                       </div>
-        </div>
+        
 
         <div class="col-4">
             
             <div class="card" id="playersData"style="width: 20rem;">
                 </div>
 
+        </div>
         </div>
     </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

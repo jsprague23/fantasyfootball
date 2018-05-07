@@ -2,6 +2,14 @@ function FantasyService(callback){
     var playersData = []
     var usersTeam= []
 
+    this.search = function search(query) {
+      var x = query.toLowerCase()
+      var filteredResults = playersData.filter(function (player) {
+        return player.fullname.toLowerCase().includes(x) || player.pro_team.toLowerCase().includes(x) || player.position.toLowerCase().includes(x)
+      })
+      return filteredResults
+    }
+    
     this.getLocalPlayers = function getLocalPlayers(){
       return playersData;
     }

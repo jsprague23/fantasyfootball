@@ -5,7 +5,7 @@ function FantasyController() {
         e.preventDefault()
         var query = e.target.query.value
         var results = fantasyService.search(query)
-        drawUsersTeam(results)
+        drawPlayersTeam(results)
         };
 
     var fantasyService = new FantasyService(drawPlayersTeam);
